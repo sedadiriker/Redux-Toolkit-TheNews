@@ -3,15 +3,24 @@ import { useDispatch, useSelector } from "react-redux";
 import { getNews } from "../features/newsSlice";
 import { Box, Grid, Typography } from "@mui/material";
 import NewsCard from "../components/NewsCard";
+import Loading from "../components/Loading";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const { newsData } = useSelector((state) => state.news);
+  const { newsData,loading,error } = useSelector((state) => state.news);
   console.log(newsData);
   useEffect(() => {
     dispatch(getNews());
   }, []);
   return (
+    <> {
+      loading&& <Loading/>
+    }
+    {error && (
+      <Typography variant="h4" color="error" component="div">
+        Oops Somehing went wrong
+      </Typography>
+    )}
     <Box width={"90%"} m={"auto"} mt={2} pb={10}>
       <Box mt={6}>
         <Grid justifyContent={"center"} container columnGap={5} rowGap={2}>
@@ -65,7 +74,8 @@ const Home = () => {
           </Grid>
         </Grid>
       </Box>
-    </Box>
+    </Box></>
+   
   );
 };
 
