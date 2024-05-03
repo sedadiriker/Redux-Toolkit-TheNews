@@ -13,7 +13,7 @@ const  NewsCard=({news,height,imgheight,url,fontSize}) => {
       <CardActionArea component="a" href={news?.url} target="_blank">
         <CardMedia
           component="img"
-          image={news?.urlToImage}
+          image={news?.image}
           height={imgheight}
           alt={news?.title}
         />

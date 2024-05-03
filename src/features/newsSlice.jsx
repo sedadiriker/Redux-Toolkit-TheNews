@@ -11,9 +11,10 @@ export const getNews = createAsyncThunk(
     "getNews",
     async () => {
         const API_KEY = process.env.REACT_APP_api
-        const URL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`
+        const URL = ` https://gnews.io/api/v4/search?q=example&lang=en&country=tr&max=10&apikey=${API_KEY}`
         const {data} = await axios(URL)
         return data.articles
+        // console.log(data)
     }
 )
 const newsSlice = createSlice({
