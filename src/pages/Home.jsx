@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getNews } from "../features/newsSlice";
+import { clearNewsData, getNews } from "../features/newsSlice";
 import { Box, Grid, Typography } from "@mui/material";
 import NewsCard from "../components/NewsCard";
 import Loading from "../components/Loading";
@@ -11,6 +11,7 @@ const Home = () => {
   console.log(newsData);
   useEffect(() => {
     dispatch(getNews());
+    return ()=> dispatch(clearNewsData())
   }, []);
   return (
     <> {
