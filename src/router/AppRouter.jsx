@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import PrivateRouter from "./PrivateRouter";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
+import Footer from "../components/Footer";
 
 const AppRouter = () => {
   return (
@@ -14,6 +15,7 @@ const AppRouter = () => {
         </Route>
         <Route path="/login" element={<Login/>}/>
       </Routes>
+      <Footer/>
     </>
   );
 };
