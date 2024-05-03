@@ -18,7 +18,7 @@ const Home = () => {
     }
     {error && (
       <Typography variant="h4" color="error" component="div">
-        Oops Somehing went wrong
+        Oops Something went wrong
       </Typography>
     )}
     <Box width={"90%"} m={"auto"} mt={2} pb={10}>
